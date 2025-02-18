@@ -1,3 +1,15 @@
+// Fallback authentication check in case main.js is not loaded
+if (typeof checkAuth !== 'function') {
+    function checkAuth() {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = 'customer-login.html';
+            return false;
+        }
+        return true;
+    }
+}
+
 // Check authentication
 if (!checkAuth()) {
     window.location.href = 'customer-login.html';
@@ -13,7 +25,7 @@ function loadOrders() {
         orders = JSON.parse(localStorage.getItem('orders') || '[]')
             .filter(order => order.customer.email === user.email)
             .sort((a, b) => new Date(b.date) - new Date(a.date));
-            
+
         renderOrders();
     } catch (error) {
         handleError(error);
@@ -31,7 +43,7 @@ function filterOrders(status) {
 // Render orders
 function renderOrders(ordersToRender = orders) {
     const ordersList = document.querySelector('.orders-list');
-    
+
     if (!ordersToRender || ordersToRender.length === 0) {
         ordersList.innerHTML = `
             <div class="empty-orders">
@@ -158,4 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-}); 
+});
