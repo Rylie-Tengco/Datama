@@ -8,22 +8,29 @@
   - White Smoke: #F5F5F5
 */
 
-/* Import a modern Google Font (optional) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* Import Google Fonts: Bebas Neue & Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  /* Use Roboto for body text */
+  font-family: 'Roboto', sans-serif;
   background: linear-gradient(to bottom right, #F5F5F5, #FFFFFF);
   color: #555555; /* Davy's Gray */
+}
+
+/* Apply Bebas Neue to all headings for a bold, distinctive look */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px; /* optional for style */
 }
 
 /* Main container for centering content */
 .main-container {
   max-width: 1200px; 
   margin: 0 auto; 
-  padding: 0 20px; /* adds side padding so content isn't flush with edges */
+  padding: 0 20px; /* side padding so content isn't flush with edges */
 }
 
 /* HERO SECTION (full width) */
