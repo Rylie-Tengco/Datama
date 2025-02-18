@@ -14,23 +14,26 @@
 body {
   margin: 0;
   padding: 0;
-  /* Use a modern sans-serif font for a clean look */
   font-family: 'Montserrat', sans-serif;
-  /* Soft gradient background using White Smoke & White */
   background: linear-gradient(to bottom right, #F5F5F5, #FFFFFF);
   color: #555555; /* Davy's Gray */
 }
 
-/* HERO SECTION */
+/* Main container for centering content */
+.main-container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; /* adds side padding so content isn't flush with edges */
+}
+
+/* HERO SECTION (full width) */
 .hero {
-  /* Create a gradient background from Off Red to Light Red */
   background: linear-gradient(135deg, #F10708 0%, #FF7D7D 100%);
-  color: #FFFFFF; /* White text on red gradient */
+  color: #FFFFFF; 
   padding: 60px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* Slight shadow effect to differentiate from rest of page */
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 .hero-content {
@@ -131,8 +134,6 @@ body {
   margin-bottom: 10px;
   text-align: center;
 }
-
-/* Socials */
 .socials a {
   display: inline-block;
   margin: 10px 10px;
@@ -144,8 +145,6 @@ body {
 .socials a:hover {
   color: #5F5FFC;
 }
-
-/* CONTACT Info */
 .contact {
   text-align: center;
 }
