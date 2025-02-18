@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Sign Up / Sign In</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html">Home</a>
+    <a href="owner.html">Owner</a>
+  </nav>
+
+  <section class="customer-section">
+    <h2>Sign Up / Sign In</h2>
+    <form>
+      <label for="customer-name">Name:</label>
+      <input type="text" id="customer-name" placeholder="Full Name" required/>
+
+      <label for="customer-email">Email:</label>
+      <input type="email" id="customer-email" placeholder="you@example.com" required/>
+
+      <label for="customer-password">Password:</label>
+      <input type="password" id="customer-password" placeholder="Password" required/>
+
+      <label for="customer-phone">Phone:</label>
+      <input type="text" id="customer-phone" placeholder="123-4567" required/>
+
+      <button type="submit" onclick="customerLogin(event)">Continue</button>
+    </form>
+  </section>
+</body>
+</html>
