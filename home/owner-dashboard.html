@@ -1,64 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Owner Dashboard</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard - Order Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owner-dashboard.css">
 </head>
 <body>
-  <div class="main-container">
-    <nav class="top-nav">
-      <a href="index.html">Home</a>
-      <a href="owner.html">Sign Out</a>
-    </nav>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Rylie Datama</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </nav>
+    </header>
 
-    <section class="dashboard">
-      <h2>Dashboard of Customer Orders</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Customer Name</th>
-            <th>Address</th>
-            <th>Contact Number</th>
-            <th>Order Details</th>
-            <th>Total Cost</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Example row -->
-          <tr>
-            <td>Jane Doe</td>
-            <td>123 Main St</td>
-            <td>123-4567</td>
-            <td>
-              <ul>
-                <li>
-                  <img src="https://via.placeholder.com/50" alt="Product" />
-                  <span>Product 1 (Sale) x 2 - $50 each</span>
-                </li>
-                <li>
-                  <img src="https://via.placeholder.com/50" alt="Product" />
-                  <span>Product 2 (Rent) x 1 - $30 total</span>
-                </li>
-              </ul>
-            </td>
-            <td>$130</td>
-            <td>
-              <select>
-                <option>Processing</option>
-                <option>Out for Delivery</option>
-                <option>Delivered</option>
-                <option>Completed</option>
-              </select>
-            </td>
-          </tr>
-          <!-- Add more rows as needed -->
-        </tbody>
-      </table>
-    </section>
-  </div>
+    <main class="dashboard-container">
+        <h1>Order Management Dashboard</h1>
+        
+        <div class="dashboard-controls">
+            <div class="filter-section">
+                <label for="statusFilter">Filter by Status:</label>
+                <select id="statusFilter">
+                    <option value="all">All Orders</option>
+                    <option value="processing">Processing</option>
+                    <option value="out-for-delivery">Out for Delivery</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <div class="search-section">
+                <input type="text" id="orderSearch" placeholder="Search orders...">
+                <button onclick="searchOrders()">Search</button>
+            </div>
+        </div>
+
+        <div class="orders-container">
+            <div id="ordersList" class="orders-grid">
+                <!-- Orders will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rylie Datama. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/owner-dashboard.js"></script>
 </body>
-</html>
+</html> 

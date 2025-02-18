@@ -1,67 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Checkout Page</title>
-  <link rel="stylesheet" href="css/styles.css"/>
-  <script defer src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Rylie Datama</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="main-container">
-    <nav class="top-nav">
-      <a href="cart.html">Back to Cart</a>
-      <a href="customer-dashboard.html">My Orders</a>
-      <a href="shopping.html">Continue Shopping</a>
+    <nav class="main-nav">
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Rylie Datama Logo" class="logo">
+            <h1>Rylie Datama</h1>
+        </div>
     </nav>
 
-    <section class="checkout-section">
-      <h2>Checkout Page</h2>
-      
-      <!-- Product Summary -->
-      <div class="checkout-items">
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Product</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Example Item -->
-            <tr>
-              <td><img src="https://via.placeholder.com/50" alt="Product" /></td>
-              <td>Product 1</td>
-              <td>$50</td>
-            </tr>
-            <!-- Add more items as needed -->
-          </tbody>
-        </table>
-        <p class="checkout-total">Total Cost: $50</p>
-      </div>
+    <main class="checkout-container">
+        <h2>Checkout</h2>
+        
+        <div class="checkout-content">
+            <div class="checkout-form">
+                <section class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                </section>
 
-      <!-- Customer Details -->
-      <form>
-        <label for="checkout-name">Customer Name:</label>
-        <input type="text" id="checkout-name" placeholder="John Doe" required/>
+                <section class="form-section">
+                    <h3>Shipping Address</h3>
+                    <div class="form-group">
+                        <label for="address">Street Address</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postal">Postal Code</label>
+                        <input type="text" id="postal" required>
+                    </div>
+                </section>
 
-        <label for="checkout-address">Customer Address:</label>
-        <input type="text" id="checkout-address" placeholder="123 Street, City" required/>
+                <section class="form-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <input type="radio" id="cod" name="payment" value="cod" checked>
+                            <label for="cod">Cash on Delivery</label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="bank" name="payment" value="bank">
+                            <label for="bank">Bank Transfer</label>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-        <label for="checkout-contact">Customer Contact Number:</label>
-        <input type="text" id="checkout-contact" placeholder="123-4567" required/>
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div class="order-items">
+                    <!-- Order items will be dynamically loaded here -->
+                </div>
+                <div class="summary-totals">
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span class="subtotal">₱0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span class="shipping">₱10.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span class="total-amount">₱0.00</span>
+                    </div>
+                </div>
+                <button class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+    </main>
 
-        <label for="checkout-payment">Mode of Payment:</label>
-        <select id="checkout-payment" required>
-          <option value="cod">Cash on Delivery</option>
-          <option value="credit-card">Credit Card</option>
-          <option value="gcash">GCash</option>
-        </select>
-
-        <button type="submit">Confirm Purchase</button>
-      </form>
-    </section>
-  </div>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
 </body>
-</html>
+</html> 
